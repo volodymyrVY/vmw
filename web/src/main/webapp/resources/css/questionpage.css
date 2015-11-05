@@ -1,0 +1,21 @@
+@CHARSET "UTF-8";
+
+body {
+    background-image: url("../images/background.jpg");
+}
+.table-textarea {
+	overflow: hidden;
+	resize: none;
+	height: 100%;
+	width: 100%;
+	border: 0;
+	background-color: transparent;
+}
+
+.sorting_1 {
+	height: 20px;
+}
+
+.btn-group {
+	margin-bottom: 15px;
+}
