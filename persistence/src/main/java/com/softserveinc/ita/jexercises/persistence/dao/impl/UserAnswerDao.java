@@ -1,6 +1,5 @@
 package com.softserveinc.ita.jexercises.persistence.dao.impl;
 
-import com.softserveinc.ita.jexercises.common.entity.UserAnswer;
 import com.softserveinc.ita.jexercises.persistence.dao.GenericDao;
 
 import java.util.List;

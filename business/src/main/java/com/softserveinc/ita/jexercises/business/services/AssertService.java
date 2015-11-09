@@ -2,8 +2,6 @@ package com.softserveinc.ita.jexercises.business.services;
 
 import java.util.List;
 
-import com.softserveinc.ita.jexercises.common.entity.Assert;
-
 /**
  * 
  * @author Kucheyavenko Dmytro

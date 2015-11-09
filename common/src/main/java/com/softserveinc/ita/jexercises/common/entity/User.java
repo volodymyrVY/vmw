@@ -1,86 +1,47 @@
 package com.softserveinc.ita.jexercises.common.entity;
 
 import java.util.Date;
-import java.util.Set;
+import java.util.List;
 
-import javax.persistence.Basic;
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.Lob;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-import com.softserveinc.ita.jexercises.common.utils.Role;
+import com.softserveinc.ita.jexercises.common.entity.utils.Gender;
+import com.softserveinc.ita.jexercises.common.entity.utils.Role;
 
-/**
- * Represents User Entity.
- * 
- * @author Oksana Senchuk
- * @version 1.0
- */
 @Entity
 @Table(name = "USER")
 public class User extends BaseEntity {
-   
-    /**
-     * User first name.
-     */
+
     @Column(name = "FIRST_NAME", nullable = false)
     private String firstName;
 
-    /**
-     * User last name.
-     */
     @Column(name = "LAST_NAME", nullable = false)
     private String lastName;
 
-    /**
-     * User email.
-     */
     @Column(name = "EMAIL", unique = true, nullable = false)
     private String email;
 
-    /**
-     * User avatar picture.
-     */
-    @Lob
-    @Basic(fetch = FetchType.LAZY)
-    @Column(name = "AVATAR")
-    private byte[] avatar;
-
-    /**
-     * User password.
-     */
     @Column(name = "PASSWORD", nullable = false)
     private String password;
 
-    /**
-     * The set of user attempts.
-     */
-    @OneToMany(fetch = FetchType.LAZY,
-            cascade = CascadeType.ALL, mappedBy = "user")
-    private Set<Attempt> attempts;
-
-    /**
-     * User role.
-     */
     @Column(name = "ROLE", nullable = false)
     private Role role;
 
-    /**
-     * User date of birth.
-     */
     @Column(name = "BIRTH_DATE", nullable = false)
     private Date birthDate;
 
-    /**
-     * Creates a new User.
-     */
-    public User() {
+    @Column (name = "PHONE")
+    private Integer phone;
 
-    }
+    @Column (name = "MOBILE_PHONE")
+    private Integer mobPhone;
+
+    @Column(name="GENDER", nullable = false)
+    private Gender gender;
+
+   private List<Photo> avatars;
 
     public Role getRole() {
         return role;
@@ -114,12 +75,12 @@ public class User extends BaseEntity {
         this.email = email;
     }
 
-    public byte[] getAvatar() {
-        return avatar;
+    public Date getBirthDate() {
+        return birthDate;
     }
 
-    public void setAvatar(byte[] avatar) {
-        this.avatar = avatar;
+    public void setBirthDate(Date birthDate) {
+        this.birthDate = birthDate;
     }
 
     public String getPassword() {
@@ -130,19 +91,35 @@ public class User extends BaseEntity {
         this.password = password;
     }
 
-    public Set<Attempt> getAttempts() {
-        return attempts;
+    public Integer getPhone() {
+        return phone;
     }
 
-    public void setAttempts(Set<Attempt> attempts) {
-        this.attempts = attempts;
+    public void setPhone(Integer phone) {
+        this.phone = phone;
     }
 
-    public Date getBirthDate() {
-        return birthDate;
+    public Integer getMobPhone() {
+        return mobPhone;
     }
 
-    public void setBirthDate(Date birthDate) {
-        this.birthDate = birthDate;
+    public void setMobPhone(Integer mobPhone) {
+        this.mobPhone = mobPhone;
+    }
+
+    public List<Photo> getAvatars() {
+        return avatars;
+    }
+
+    public void setAvatars(List<Photo> avatars) {
+        this.avatars = avatars;
+    }
+
+    public Gender getGender() {
+        return gender;
+    }
+
+    public void setGender(Gender gender) {
+        this.gender = gender;
     }
 }

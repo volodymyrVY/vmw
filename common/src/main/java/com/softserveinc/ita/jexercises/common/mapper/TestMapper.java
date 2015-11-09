@@ -1,7 +1,6 @@
 package com.softserveinc.ita.jexercises.common.mapper;
 
 import com.softserveinc.ita.jexercises.common.dto.TestDescriptionDto;
-import com.softserveinc.ita.jexercises.common.entity.Test;
 import org.springframework.stereotype.Component;
 
 /**

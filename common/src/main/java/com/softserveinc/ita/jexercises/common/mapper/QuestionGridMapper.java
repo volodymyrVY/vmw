@@ -1,7 +1,6 @@
 package com.softserveinc.ita.jexercises.common.mapper;
 
 import com.softserveinc.ita.jexercises.common.dto.QuestionGridDto;
-import com.softserveinc.ita.jexercises.common.entity.Question;
 import com.softserveinc.ita.jexercises.common.utils.TextFormatter;
 import org.springframework.stereotype.Component;
 import java.util.ArrayList;

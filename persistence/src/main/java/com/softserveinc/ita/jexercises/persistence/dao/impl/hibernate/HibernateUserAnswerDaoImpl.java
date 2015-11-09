@@ -2,7 +2,6 @@ package com.softserveinc.ita.jexercises.persistence.dao.impl.hibernate;
 
 import com.mysema.query.jpa.impl.JPAQuery;
 import com.softserveinc.ita.jexercises.common.entity.QUserAnswer;
-import com.softserveinc.ita.jexercises.common.entity.UserAnswer;
 import com.softserveinc.ita.jexercises.persistence.dao.impl.UserAnswerDao;
 import org.springframework.stereotype.Repository;
 

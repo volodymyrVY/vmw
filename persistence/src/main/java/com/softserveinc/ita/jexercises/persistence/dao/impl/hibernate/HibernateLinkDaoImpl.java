@@ -2,7 +2,6 @@ package com.softserveinc.ita.jexercises.persistence.dao.impl.hibernate;
 
 import org.springframework.stereotype.Repository;
 import com.mysema.query.jpa.impl.JPAQuery;
-import com.softserveinc.ita.jexercises.common.entity.Link;
 import com.softserveinc.ita.jexercises.common.entity.QLink;
 import com.softserveinc.ita.jexercises.persistence.dao.impl.LinkDao;
 

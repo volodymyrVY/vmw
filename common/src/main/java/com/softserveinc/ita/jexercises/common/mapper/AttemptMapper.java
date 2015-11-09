@@ -1,10 +1,7 @@
 package com.softserveinc.ita.jexercises.common.mapper;
 
 import com.softserveinc.ita.jexercises.common.dto.AttemptDto;
-import com.softserveinc.ita.jexercises.common.entity.Attempt;
-import com.softserveinc.ita.jexercises.common.entity.Test;
 import com.softserveinc.ita.jexercises.common.entity.User;
-import com.softserveinc.ita.jexercises.common.entity.UserAnswer;
 import org.springframework.stereotype.Component;
 
 /**

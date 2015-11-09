@@ -5,7 +5,6 @@ import com.softserveinc.ita.jexercises.common.dto.GridResponseDto;
 import com.softserveinc.ita.jexercises.common.dto.SearchCondition;
 import com.softserveinc.ita.jexercises.common.dto.TestCreatingDto;
 import com.softserveinc.ita.jexercises.common.dto.dataTables.DataTables;
-import com.softserveinc.ita.jexercises.common.entity.Test;
 import com.softserveinc.ita.jexercises.common.mapper.DataTablesMapper;
 import com.softserveinc.ita.jexercises.common.utils.ManyToManyFilter;
 import org.springframework.beans.factory.annotation.Autowired;

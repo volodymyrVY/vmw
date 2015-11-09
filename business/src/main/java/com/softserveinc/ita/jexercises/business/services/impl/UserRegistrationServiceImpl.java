@@ -10,7 +10,7 @@ import com.softserveinc.ita.jexercises.common.dto.ResponseDto;
 import com.softserveinc.ita.jexercises.common.dto.UserDto;
 import com.softserveinc.ita.jexercises.common.entity.User;
 import com.softserveinc.ita.jexercises.common.mapper.UserMapper;
-import com.softserveinc.ita.jexercises.common.utils.Role;
+import com.softserveinc.ita.jexercises.common.entity.utils.Role;
 import com.softserveinc.ita.jexercises.persistence.dao.impl.UserDao;
 
 /**

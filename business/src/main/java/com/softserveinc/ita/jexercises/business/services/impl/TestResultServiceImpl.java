@@ -10,8 +10,6 @@ import org.springframework.transaction.annotation.Transactional;
 import com.softserveinc.ita.jexercises.business.services.CurrentUserService;
 import com.softserveinc.ita.jexercises.business.services.TestResultService;
 import com.softserveinc.ita.jexercises.common.dto.TestResultDto;
-import com.softserveinc.ita.jexercises.common.entity.Attempt;
-import com.softserveinc.ita.jexercises.common.entity.UserAnswer;
 import com.softserveinc.ita.jexercises.common.mapper.TestResultMapper;
 import com.softserveinc.ita.jexercises.persistence.dao.impl.AttemptDao;
 

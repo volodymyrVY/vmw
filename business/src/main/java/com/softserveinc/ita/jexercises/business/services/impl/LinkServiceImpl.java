@@ -8,8 +8,6 @@ import org.springframework.stereotype.Service;
 import com.softserveinc.ita.jexercises.business.services.LinkService;
 import com.softserveinc.ita.jexercises.business.utils.ShortCodeUtil;
 import com.softserveinc.ita.jexercises.common.dto.LinkDto;
-import com.softserveinc.ita.jexercises.common.entity.Link;
-import com.softserveinc.ita.jexercises.common.entity.Test;
 import com.softserveinc.ita.jexercises.persistence.dao.impl.LinkDao;
 import com.softserveinc.ita.jexercises.persistence.dao.impl.TestDao;
 

@@ -2,7 +2,6 @@ package com.softserveinc.ita.jexercises.business.sandbox;
 
 import bsh.EvalError;
 import com.softserveinc.ita.jexercises.business.utils.SandboxTestData;
-import com.softserveinc.ita.jexercises.common.entity.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;

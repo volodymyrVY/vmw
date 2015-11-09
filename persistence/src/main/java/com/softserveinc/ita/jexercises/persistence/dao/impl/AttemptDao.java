@@ -1,6 +1,5 @@
 package com.softserveinc.ita.jexercises.persistence.dao.impl;
 
-import com.softserveinc.ita.jexercises.common.entity.Attempt;
 import com.softserveinc.ita.jexercises.persistence.dao.GenericDao;
 
 /**

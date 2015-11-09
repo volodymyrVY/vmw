@@ -1,7 +1,6 @@
 package com.softserveinc.ita.jexercises.persistence.dao;
 
 import com.softserveinc.ita.jexercises.common.dto.SearchCondition;
-import com.softserveinc.ita.jexercises.common.entity.Question;
 import com.softserveinc.ita.jexercises.common.entity.User;
 import com.softserveinc.ita.jexercises.common.utils.ManyToManyFilter;
 import com.softserveinc.ita.jexercises.persistence.dao.impl.QuestionDao;

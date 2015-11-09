@@ -1,8 +1,6 @@
 package com.softserveinc.ita.jexercises.common.mapper;
 
 import com.softserveinc.ita.jexercises.common.dto.QuestionResponseDto;
-import com.softserveinc.ita.jexercises.common.entity.Question;
-import com.softserveinc.ita.jexercises.common.entity.UserAnswer;
 import org.springframework.stereotype.Component;
 
 /**

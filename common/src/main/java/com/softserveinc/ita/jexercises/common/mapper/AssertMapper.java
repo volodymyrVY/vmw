@@ -7,8 +7,6 @@ import java.util.Set;
 
 import com.softserveinc.ita.jexercises.common.dto.AssertDto;
 import com.softserveinc.ita.jexercises.common.dto.QuestionDto;
-import com.softserveinc.ita.jexercises.common.entity.Assert;
-import com.softserveinc.ita.jexercises.common.entity.Question;
 
 /**
  * Represents entity/DTO mapping tool.

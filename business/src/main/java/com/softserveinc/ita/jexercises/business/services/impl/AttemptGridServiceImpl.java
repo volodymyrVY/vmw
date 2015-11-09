@@ -4,7 +4,6 @@ import com.softserveinc.ita.jexercises.business.services.AttemptGridService;
 import com.softserveinc.ita.jexercises.common.dto.AttemptDto;
 import com.softserveinc.ita.jexercises.common.dto.GridResponseDto;
 import com.softserveinc.ita.jexercises.common.dto.SearchCondition;
-import com.softserveinc.ita.jexercises.common.entity.Attempt;
 import com.softserveinc.ita.jexercises.common.mapper.AttemptMapper;
 import com.softserveinc.ita.jexercises.persistence.dao.impl.AttemptDao;
 import org.springframework.beans.factory.annotation.Autowired;

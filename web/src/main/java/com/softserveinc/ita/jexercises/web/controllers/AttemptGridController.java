@@ -16,9 +16,8 @@ import com.softserveinc.ita.jexercises.business.services.TestService;
 import com.softserveinc.ita.jexercises.common.dto.GridResponseDto;
 import com.softserveinc.ita.jexercises.common.dto.SearchCondition;
 import com.softserveinc.ita.jexercises.common.dto.dataTables.DataTables;
-import com.softserveinc.ita.jexercises.common.entity.Test;
 import com.softserveinc.ita.jexercises.common.mapper.DataTablesMapper;
-import com.softserveinc.ita.jexercises.common.utils.Role;
+import com.softserveinc.ita.jexercises.common.entity.utils.Role;
 import com.softserveinc.ita.jexercises.web.utils.ResourceNotFoundException;
 
 /**

@@ -1,7 +1,5 @@
 package com.softserveinc.ita.jexercises.business.services;
 
-import com.softserveinc.ita.jexercises.common.entity.Attempt;
-
 import java.util.List;
 
 /**

@@ -1,8 +1,6 @@
 package com.softserveinc.ita.jexercises.common.mapper;
 
 import com.softserveinc.ita.jexercises.common.dto.TestStartDto;
-import com.softserveinc.ita.jexercises.common.entity.Attempt;
-import com.softserveinc.ita.jexercises.common.entity.Question;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;

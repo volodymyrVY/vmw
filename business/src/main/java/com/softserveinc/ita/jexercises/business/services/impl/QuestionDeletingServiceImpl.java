@@ -5,7 +5,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.softserveinc.ita.jexercises.business.services.QuestionDeletingService;
-import com.softserveinc.ita.jexercises.common.entity.Question;
 import com.softserveinc.ita.jexercises.persistence.dao.impl.QuestionDao;
 
 /**

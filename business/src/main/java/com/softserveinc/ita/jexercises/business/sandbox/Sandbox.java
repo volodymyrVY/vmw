@@ -2,7 +2,6 @@ package com.softserveinc.ita.jexercises.business.sandbox;
 
 import bsh.EvalError;
 import bsh.Interpreter;
-import com.softserveinc.ita.jexercises.common.entity.Assert;
 
 /**
  * Represents Sandbox.

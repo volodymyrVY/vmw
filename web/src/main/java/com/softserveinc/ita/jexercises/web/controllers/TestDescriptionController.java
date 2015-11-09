@@ -4,7 +4,7 @@ import com.softserveinc.ita.jexercises.business.services.TestDescriptionService;
 import com.softserveinc.ita.jexercises.business.services.TestService;
 import com.softserveinc.ita.jexercises.common.dto.ResponseDto;
 import com.softserveinc.ita.jexercises.common.dto.TestDescriptionDto;
-import com.softserveinc.ita.jexercises.common.utils.Role;
+import com.softserveinc.ita.jexercises.common.entity.utils.Role;
 import com.softserveinc.ita.jexercises.web.utils.AccessDeniedException;
 import com.softserveinc.ita.jexercises.web.utils.ResourceNotFoundException;
 

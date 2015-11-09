@@ -1,7 +1,7 @@
 package com.softserveinc.ita.jexercises.common.dto;
 
 
-import com.softserveinc.ita.jexercises.common.utils.Role;
+import com.softserveinc.ita.jexercises.common.entity.utils.Role;
 
 import java.util.Date;
 

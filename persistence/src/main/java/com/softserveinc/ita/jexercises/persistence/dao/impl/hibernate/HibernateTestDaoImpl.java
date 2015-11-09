@@ -1,7 +1,6 @@
 package com.softserveinc.ita.jexercises.persistence.dao.impl.hibernate;
 
 import org.springframework.stereotype.Repository;
-import com.softserveinc.ita.jexercises.common.entity.Test;
 import com.softserveinc.ita.jexercises.persistence.dao.impl.TestDao;
 
 /**

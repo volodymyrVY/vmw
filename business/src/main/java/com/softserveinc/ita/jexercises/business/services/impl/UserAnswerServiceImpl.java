@@ -1,7 +1,6 @@
 package com.softserveinc.ita.jexercises.business.services.impl;
 
 import com.softserveinc.ita.jexercises.business.services.UserAnswerService;
-import com.softserveinc.ita.jexercises.common.entity.UserAnswer;
 import com.softserveinc.ita.jexercises.persistence.dao.impl.UserAnswerDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

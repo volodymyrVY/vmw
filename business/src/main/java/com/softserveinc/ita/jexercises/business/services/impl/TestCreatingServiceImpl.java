@@ -5,8 +5,6 @@ import com.softserveinc.ita.jexercises.common.dto.GridResponseDto;
 import com.softserveinc.ita.jexercises.common.dto.QuestionGridDto;
 import com.softserveinc.ita.jexercises.common.dto.SearchCondition;
 import com.softserveinc.ita.jexercises.common.dto.TestCreatingDto;
-import com.softserveinc.ita.jexercises.common.entity.Question;
-import com.softserveinc.ita.jexercises.common.entity.Test;
 import com.softserveinc.ita.jexercises.common.mapper.QuestionGridMapper;
 import com.softserveinc.ita.jexercises.common.mapper.TestCreatingMapper;
 import com.softserveinc.ita.jexercises.persistence.dao.impl.QuestionDao;

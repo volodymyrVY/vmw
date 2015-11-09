@@ -10,8 +10,6 @@ import org.springframework.transaction.annotation.Transactional;
 import com.softserveinc.ita.jexercises.business.services.QuestionCreatingService;
 import com.softserveinc.ita.jexercises.business.services.QuestionService;
 import com.softserveinc.ita.jexercises.common.dto.QuestionDto;
-import com.softserveinc.ita.jexercises.common.entity.Assert;
-import com.softserveinc.ita.jexercises.common.entity.Question;
 import com.softserveinc.ita.jexercises.common.mapper.AssertMapper;
 import com.softserveinc.ita.jexercises.common.mapper.QuestionMapper;
 import com.softserveinc.ita.jexercises.persistence.dao.impl.AssertDao;

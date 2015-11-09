@@ -5,7 +5,6 @@ import java.util.List;
 import com.mysema.query.jpa.impl.JPADeleteClause;
 import org.springframework.stereotype.Repository;
 import com.mysema.query.jpa.impl.JPAQuery;
-import com.softserveinc.ita.jexercises.common.entity.Assert;
 import com.softserveinc.ita.jexercises.common.entity.QAssert;
 import com.softserveinc.ita.jexercises.persistence.dao.impl.AssertDao;
 

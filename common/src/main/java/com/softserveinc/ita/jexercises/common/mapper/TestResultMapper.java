@@ -8,9 +8,6 @@ import org.springframework.stereotype.Component;
 
 import com.softserveinc.ita.jexercises.common.dto.TestResultAnswerDto;
 import com.softserveinc.ita.jexercises.common.dto.TestResultDto;
-import com.softserveinc.ita.jexercises.common.entity.Attempt;
-import com.softserveinc.ita.jexercises.common.entity.Test;
-import com.softserveinc.ita.jexercises.common.entity.UserAnswer;
 
 /**
  * Represents entity/DTO mapping tool.

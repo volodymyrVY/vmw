@@ -9,7 +9,6 @@ import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.when;
 import com.softserveinc.ita.jexercises.business.utils.ShortCodeUtil;
-import com.softserveinc.ita.jexercises.common.entity.Link;
 import com.softserveinc.ita.jexercises.persistence.dao.impl.LinkDao;
 
 /**
