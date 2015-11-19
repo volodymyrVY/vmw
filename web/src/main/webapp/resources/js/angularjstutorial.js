@@ -9,7 +9,7 @@ app.controller('MainController', function ($scope)
 
 .directive('pageDirective', function ()
 {
-	return {
+	return{
 		restrict: 'E',
 		template: '<div>Here is a new button</div>',
 		controller: 'MainController',
