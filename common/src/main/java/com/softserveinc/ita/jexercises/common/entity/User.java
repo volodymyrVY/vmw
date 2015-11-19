@@ -3,9 +3,7 @@ package com.softserveinc.ita.jexercises.common.entity;
 import java.util.Date;
 import java.util.List;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 import com.softserveinc.ita.jexercises.common.entity.utils.Gender;
 import com.softserveinc.ita.jexercises.common.entity.utils.Role;
@@ -36,12 +34,10 @@ public class User extends BaseEntity {
     private Integer phone;
 
     @Column (name = "MOBILE_PHONE")
-    private Integer mobPhone;
+    private Integer mobilePhone;
 
     @Column(name="GENDER", nullable = false)
     private Gender gender;
-
-   private List<Photo> avatars;
 
     public Role getRole() {
         return role;
@@ -99,27 +95,19 @@ public class User extends BaseEntity {
         this.phone = phone;
     }
 
-    public Integer getMobPhone() {
-        return mobPhone;
-    }
-
-    public void setMobPhone(Integer mobPhone) {
-        this.mobPhone = mobPhone;
-    }
-
-    public List<Photo> getAvatars() {
-        return avatars;
-    }
-
-    public void setAvatars(List<Photo> avatars) {
-        this.avatars = avatars;
-    }
-
     public Gender getGender() {
         return gender;
     }
 
     public void setGender(Gender gender) {
         this.gender = gender;
+    }
+
+    public Integer getMobilePhone() {
+        return mobilePhone;
+    }
+
+    public void setMobilePhone(Integer mobilePhone) {
+        this.mobilePhone = mobilePhone;
     }
 }

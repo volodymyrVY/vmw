@@ -15,14 +15,6 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
 
-    <repositories>
-        <repository>
-            <id>business.local.repo</id>
-            <name>business</name>
-            <url>file:${project.basedir}/src/main/resources/repo</url>
-        </repository>
-    </repositories>
-
 	<dependencies>
 
 		<dependency>

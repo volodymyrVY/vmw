@@ -1,15 +1,5 @@
 package com.softserveinc.ita.jexercises.persistence.dao.impl.hibernate;
 
-import com.mysema.query.BooleanBuilder;
-import com.mysema.query.jpa.JPASubQuery;
-import com.mysema.query.jpa.impl.JPAQuery;
-import com.mysema.query.types.OrderSpecifier;
-import com.mysema.query.types.path.ListPath;
-import com.mysema.query.types.path.PathBuilder;
-import com.mysema.query.types.path.SimplePath;
-import com.mysema.query.types.path.StringPath;
-import com.softserveinc.ita.jexercises.common.dto.SearchCondition;
-import com.softserveinc.ita.jexercises.common.utils.ManyToManyFilter;
 import com.softserveinc.ita.jexercises.persistence.dao.GenericDao;
 
 import javax.persistence.Entity;
@@ -18,9 +8,7 @@ import javax.persistence.PersistenceContext;
 import java.beans.Introspector;
 import java.io.Serializable;
 import java.lang.reflect.ParameterizedType;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Map;
 
 /**
  * Represents implementation of GenericDao interface.
@@ -37,7 +25,6 @@ public class HibernateGenericDaoImpl<T, PK extends Serializable> implements
     private static final String DESC = "desc";
     private Class<T> entityClass;
     private String entity;
-    private PathBuilder<T> qObject;
 
     @PersistenceContext
     private EntityManager entityManager;
@@ -49,8 +36,6 @@ public class HibernateGenericDaoImpl<T, PK extends Serializable> implements
         ParameterizedType genericSuperclass = (ParameterizedType) getClass()
                 .getGenericSuperclass();
         entityClass = (Class) genericSuperclass.getActualTypeArguments()[0];
-        qObject = new PathBuilder<>(entityClass,
-                Introspector.decapitalize(getEntityName()));
     }
 
     @Override
@@ -82,152 +67,9 @@ public class HibernateGenericDaoImpl<T, PK extends Serializable> implements
 
     @Override
     public List<T> findAll() {
-        JPAQuery jpaQuery = new JPAQuery(entityManager);
-        return jpaQuery.from(qObject).list(qObject);
-    }
-
-    @Override
-    public List<T> findAllByCriteria(SearchCondition searchCondition) {
-        JPAQuery jpaQuery = applyFilters(searchCondition);
-        filterWithOr(jpaQuery, searchCondition);
-        jpaQuery.offset(searchCondition.getPageNumber()
-                * searchCondition.getPageSize())
-                .limit(searchCondition.getPageSize());
-
-        for (Map.Entry<String, String> order :
-                searchCondition.getOrderByMap().entrySet()) {
-            StringPath sortFieldPath = qObject.getString(order.getKey());
-            OrderSpecifier<String> orderSpecifier = sortFieldPath.asc();
-
-            if (DESC.equals(order.getValue())) {
-                orderSpecifier = sortFieldPath.desc();
-            }
-
-            jpaQuery.orderBy(orderSpecifier);
-        }
-        return jpaQuery.list(qObject);
-    }
-
-    @Override
-    public Long getNumberOfFilteredRecords(SearchCondition searchCondition) {
-        JPAQuery jpaQuery = applyFilters(searchCondition);
-        filterWithOr(jpaQuery, searchCondition);
-        return jpaQuery.count();
-    }
-
-    @Override
-    public Long getNumberOfRecords(SearchCondition searchCondition) {
-        JPAQuery jpaQuery = applyFilters(searchCondition);
-        return jpaQuery.count();
-    }
-
-    private void filterWithAnd(JPAQuery jpaQuery,
-                               SearchCondition searchCondition) {
-        for (Map.Entry<String, Object> filter :
-                searchCondition.getAndFilterMap().entrySet()) {
-            SimplePath filterPath = qObject.getSimple(filter.getKey(),
-                    filter.getValue().getClass());
-            jpaQuery.where(filterPath.eq(filter.getValue()));
-        }
-    }
-
-    private void filterWithOr(JPAQuery jpaQuery,
-                              SearchCondition searchCondition) {
-        BooleanBuilder builder = new BooleanBuilder();
-
-        for (Map.Entry<String, Object> filter :
-                searchCondition.getOrFilterMap().entrySet()) {
-            if (filter.getValue().getClass().equals(String.class)) {
-                StringPath filterPath = qObject.getString(filter.getKey());
-                builder.or(filterPath.containsIgnoreCase(
-                        (String) filter.getValue()));
-            } else {
-                SimplePath filterPath = qObject.getSimple(filter.getKey(),
-                        filter.getValue().getClass());
-                builder.or(filterPath.eq(filter.getValue()));
-            }
-        }
-        jpaQuery.where(builder);
-    }
-
-    private void filterWithNot(JPAQuery jpaQuery,
-                               SearchCondition searchCondition) {
-        BooleanBuilder builder = new BooleanBuilder();
-
-        for (Map.Entry<String, Object> filter :
-                searchCondition.getNotFilterMap().entrySet()) {
-            SimplePath filterPath = qObject.getSimple(filter.getKey(),
-                    filter.getValue().getClass());
-            builder.andNot(filterPath.eq(filter.getValue()));
-        }
-        jpaQuery.where(builder);
-    }
-
-    @SuppressWarnings("unchecked")
-    private void manyToManyAndFilter(JPAQuery jpaQuery,
-                                     SearchCondition searchCondition) {
-        ManyToManyFilter filter = searchCondition.getManyToManyAndFilter();
-        Class joinClass = filter.getJoinClass();
-        PathBuilder<?> joinQObject = new PathBuilder(joinClass,
-                joinClass.getSimpleName());
-        ListPath joinFieldPath = qObject.getList(filter.getJoinFieldName(),
-                HashSet.class);
-
-        jpaQuery.innerJoin(joinFieldPath, joinQObject);
-
-        for (Map.Entry<String, Object> filterMap :
-                filter.getFilterMap().entrySet()) {
-            SimplePath filterPath = joinQObject.getSimple(filterMap.getKey(),
-                    filterMap.getValue().getClass());
-            jpaQuery.where(filterPath.eq(filterMap.getValue()));
-        }
-    }
-
-    @SuppressWarnings("unchecked")
-    private void manyToManyNotInFilter(JPAQuery jpaQuery,
-                                       SearchCondition searchCondition) {
-        ManyToManyFilter filter = searchCondition.getManyToManyNotInFilter();
-        Class joinClass = filter.getJoinClass();
-        PathBuilder<?> joinQObject = new PathBuilder(joinClass,
-                joinClass.getSimpleName());
-        ListPath joinFieldPath = qObject.getList(filter.getJoinFieldName(),
-                HashSet.class);
-
-        Map.Entry<String, Class> notInFieldMap = searchCondition
-                .getNotInFieldMap().entrySet().iterator().next();
-        SimplePath notInFieldPath = qObject.getSimple(
-                notInFieldMap.getKey(), notInFieldMap.getValue());
-
-        for (Map.Entry<String, Object> filterMap :
-                filter.getFilterMap().entrySet()) {
-
-            SimplePath filterPath = joinQObject.getSimple(filterMap.getKey(),
-                    filterMap.getValue().getClass());
-
-            jpaQuery.where(notInFieldPath.notIn(new JPASubQuery().from(qObject)
-                    .innerJoin(joinFieldPath, joinQObject)
-                    .where(filterPath.eq(filterMap.getValue()))
-                    .list(notInFieldPath)));
-        }
-    }
-
-    private JPAQuery applyFilters(SearchCondition searchCondition) {
-        JPAQuery jpaQuery = new JPAQuery(entityManager);
-
-        jpaQuery.from(qObject);
-
-        if (searchCondition.getManyToManyNotInFilter() != null) {
-            manyToManyNotInFilter(jpaQuery, searchCondition);
-        }
-
-        if (searchCondition.getManyToManyAndFilter() != null) {
-            manyToManyAndFilter(jpaQuery, searchCondition);
-        }
-
-        filterWithAnd(jpaQuery, searchCondition);
-        filterWithNot(jpaQuery, searchCondition);
-
-        return jpaQuery;
+       /* JPAQuery jpaQuery = new JPAQuery(entityManager);
+        return jpaQuery.from(qObject).list(qObject);*/
+        return null;
     }
 
     private String getEntityName() {

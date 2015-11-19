@@ -6,14 +6,9 @@
         http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
 	<persistence-unit name="JpaService" transaction-type="RESOURCE_LOCAL">
 		<provider>org.hibernate.ejb.HibernatePersistence</provider>
-		<class>com.softserveinc.ita.jexercises.common.entity.Attempt</class>
-		<class>com.softserveinc.ita.jexercises.common.entity.Test</class>
+
 		<class>com.softserveinc.ita.jexercises.common.entity.User</class>
-		<class>com.softserveinc.ita.jexercises.common.entity.Question</class>
-		<class>com.softserveinc.ita.jexercises.common.entity.Assert</class>
-		<class>com.softserveinc.ita.jexercises.common.entity.UserAnswer</class>
-		<class>com.softserveinc.ita.jexercises.common.entity.SharedAnswer</class>
-		<class>com.softserveinc.ita.jexercises.common.entity.Link</class>
+
 		<properties>
 			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect" />
 			<property name="hibernate.connection.show_sql" value="true" />

@@ -1,7 +1,5 @@
 package com.softserveinc.ita.jexercises.persistence.dao;
 
-import com.softserveinc.ita.jexercises.common.dto.SearchCondition;
-
 import java.io.Serializable;
 import java.util.List;
 
@@ -58,28 +56,4 @@ public interface GenericDao<T, PK extends Serializable> {
      * @return List of entity objects.
      */
     List<T> findAll();
-
-    /**
-     * Method for sorting, filtering and paging.
-     *
-     * @param searchCondition Object with search parameters.
-     * @return List of entity objects.
-     */
-    List<T> findAllByCriteria(SearchCondition searchCondition);
-
-    /**
-     * Get number of filtered results for pagination.
-     *
-     * @param searchCondition Object with search parameters.
-     * @return Number of filtered results.
-     */
-    Long getNumberOfFilteredRecords(SearchCondition searchCondition);
-
-    /**
-     * Get number of all table records for pagination.
-     *
-     * @param searchCondition Filter parameters.
-     * @return Number of all records.
-     */
-    Long getNumberOfRecords(SearchCondition searchCondition);
 }

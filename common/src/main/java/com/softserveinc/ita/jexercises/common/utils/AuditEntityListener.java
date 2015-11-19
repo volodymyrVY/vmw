@@ -28,7 +28,6 @@ public class AuditEntityListener {
      */
     @PrePersist
     public void prePersist(BaseEntity e) {
-        e.setCreatedByUser(getCurrentUserEmail());
         e.setCreatedDate(new Date());
     }
 
@@ -39,7 +38,6 @@ public class AuditEntityListener {
      */
     @PreUpdate
     public void preUpdate(BaseEntity e) {
-        e.setModifiedByUser(getCurrentUserEmail());
         e.setModifiedDate(new Date());
     }
 
@@ -50,7 +48,7 @@ public class AuditEntityListener {
      */
     private String getCurrentUserEmail() {
         Authentication authentication = SecurityContextHolder.getContext()
-               .getAuthentication();
+                .getAuthentication();
 
         if (authentication == null || !authentication.isAuthenticated()) {
             return ANONYMOUS_USER;
