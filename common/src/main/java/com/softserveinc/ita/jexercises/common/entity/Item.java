@@ -1,15 +1,13 @@
 package com.softserveinc.ita.jexercises.common.entity;
 
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.ManyToOne;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.util.Date;
 import java.util.List;
 
 @Entity
 @Table(name="TIR")
-public class Tir extends BaseEntity {
+public class Item extends BaseEntity {
 
     @Column(name="NAME", nullable = false)
     private String name;
@@ -19,6 +17,13 @@ public class Tir extends BaseEntity {
 
     @Column(name = "PRICE")
     private Integer price;
+
+    @Column(name = "MANUFACTURED_DATE")
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date manufacturedDate;
+
+    @ManyToMany
+    private ItemAttribute attribute;
 
 
     private List<Photo> photos;
