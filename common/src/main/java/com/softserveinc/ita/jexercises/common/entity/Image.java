@@ -5,14 +5,14 @@ import javax.persistence.Column;
 import javax.persistence.FetchType;
 import javax.persistence.Lob;
 
-public class Photo extends BaseEntity {
+public class Image extends BaseEntity {
 
     /**
      * User avatar picture.
      */
     @Lob
     @Basic(fetch = FetchType.LAZY)
-    @Column(name = "Image")
+    @Column(name = "IMAGE")
     private byte[] img;
 
     public byte[] getImg() {

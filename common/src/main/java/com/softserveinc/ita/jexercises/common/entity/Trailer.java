@@ -1,13 +1,20 @@
 package com.softserveinc.ita.jexercises.common.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.Inheritance;
-import javax.persistence.InheritanceType;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "TRAILER")
 @Inheritance(strategy= InheritanceType.JOINED)
-public class Trailer {
+public class Trailer extends Item {
 
+    @Column(name = "AXIS")
+    private String axis;
+
+    public String getAxis() {
+        return axis;
+    }
+
+    public void setAxis(String axis) {
+        this.axis = axis;
+    }
 }

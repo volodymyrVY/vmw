@@ -3,8 +3,8 @@
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
                             http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
 
-	<display-name>VMV & VMV-TRANS WEB APPLICATION</display-name>
+	<display-name>VMV WEB APPLICATION</display-name>
 	<welcome-file-list>
-		<welcome-file>/WEB-INF/index.html</welcome-file>
+		<welcome-file>/WEB-INF/view/welcome.html</welcome-file>
 	</welcome-file-list>
 </web-app>
