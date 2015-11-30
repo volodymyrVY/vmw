@@ -1,17 +1,17 @@
-/**
- * Created by vyakymiv on 30.11.15.
- */
-
-
-
-var runModule = angular.module('runModule',[]);
-angular.module("runModule").controller("def", function($scope){
-
-     $scope.text = "0"
-
-    if ($scope.input!='undefined'){
-        $scope.text = $scope.input;
-    }
-
-
-});
+/*
+angular.module('runModule',['ui.bootstrap']).config(function($routeProvider){
+    $routeProvider
+        .when('/',{
+            templateUrl:'app/index.html'
+        })
+        /!*.when('/home',{
+            templateUrl:'app/index.html',
+            controller: 'WelcomeController'
+        })*!/
+        .when('/about', {
+            templateUrl: 'app/welcome/about.html'
+            /!*controller: 'WelcomeController'*!/
+        })
+        .otherwise({ redirectTo: '/'});
+});*/
+angular.module('runModule',['ui.bootstrap']);
