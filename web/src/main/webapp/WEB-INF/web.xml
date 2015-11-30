@@ -5,6 +5,6 @@
 
 	<display-name>VMV WEB APPLICATION</display-name>
 	<welcome-file-list>
-		<welcome-file>/WEB-INF/view/welcome.html</welcome-file>
+		<welcome-file>/resources/app/index.html</welcome-file>
 	</welcome-file-list>
 </web-app>

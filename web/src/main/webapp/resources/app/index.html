@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>VMV Application</title>
+    <script src="/resources/app/dependency/bower-components/angular/angular.js"></script>
+    <script  src="/resources/app/dependency/bower-components/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script  src="/resources/app/run.js"></script>
+</head>
+<body ng-app="runModule" ng-controller="def">
+{{2+2}}
+
+
+
+<div>
+    <form name="userForm">
+        <label>Name:
+            <input type="text" name="userName"
+                   ng-model="input" />
+        </label>
+    </form>
+    <pre>user.name = <span>{{text}}</span></pre>
+</div>
+
+
+</body>
+</html>
