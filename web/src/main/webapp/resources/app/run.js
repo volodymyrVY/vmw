@@ -17,15 +17,16 @@
 /*angular.module('runModule',['ui.bootstrap']);*/
 
 
-var app = angular.module('runModule', ['ui.bootstrap', 'ui.directives']).config(function () {
-   /* $routeProvider
-        .when('/', {
-            templateUrl: 'app/index.html'
-        })
-        .when('/about', {
-            templateUrl: 'app/welcome/about.html'
-                .otherwise({redirectTo: '/'})
-        })*/
+var app = angular.module('runModule', ['ui.bootstrap', 'ui.directives', 'ui.router'])
+    .config(function ($stateProvider, $urlRouterProvider) {
+        $urlRouterProvider.otherwise("/");
+        //
+        // Now set up the states
+        $stateProvider
+            .state('about', {
+                url: "/about",
+                templateUrl: "/resources/app/welcome/routeTest.html"
+            });
 });
 
 

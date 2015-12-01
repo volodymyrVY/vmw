@@ -20,7 +20,12 @@ public class WelcomeController {
      * @return ModelAndView Welcome page or redirect to /tests.
      */
     @RequestMapping(value = "", method = RequestMethod.GET)
-    public ModelAndView welcomeForm() {
-            return new ModelAndView("redirect:/tests");
+    public String welcomeForm() {
+            return "/resources/app/index.html";
         }
+
+    @RequestMapping(value = "/admin", method = RequestMethod.GET)
+    public String adminForm() {
+        return "/resources/app/admin/index.html";
     }
+}
