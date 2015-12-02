@@ -1,25 +1,45 @@
 package com.softserveinc.ita.jexercises.common.entity;
 
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Field;
+
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.FetchType;
 import javax.persistence.Lob;
 
-public class Image extends BaseEntity {
+public class Image {
 
-    /**
-     * User avatar picture.
-     */
-    @Lob
-    @Basic(fetch = FetchType.LAZY)
-    @Column(name = "IMAGE")
-    private byte[] img;
+    @Id
+    private String id;
 
-    public byte[] getImg() {
-        return img;
+    @Field
+    private String path;
+
+    @Field
+    private String main;
+
+    public String getId() {
+        return id;
     }
 
-    public void setImg(byte[] img) {
-        this.img = img;
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getPath() {
+        return path;
+    }
+
+    public void setPath(String path) {
+        this.path = path;
+    }
+
+    public String getMain() {
+        return main;
+    }
+
+    public void setMain(String main) {
+        this.main = main;
     }
 }

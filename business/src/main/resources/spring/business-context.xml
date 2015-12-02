@@ -3,7 +3,7 @@
 	   xmlns:p="http://www.springframework.org/schema/p" xmlns:tx="http://www.springframework.org/schema/tx"
 	   xmlns:context="http://www.springframework.org/schema/context"
 	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	   xmlns:mongo="http://www.springframework.org/schema/data/mongo"
+
 	   xsi:schemaLocation="http://www.springframework.org/schema/beans
 http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
 http://www.springframework.org/schema/tx
@@ -20,18 +20,4 @@ http://www.springframework.org/schema/context/spring-context-3.0.xsd http://www.
 		base-package="com.softserveinc.ita.jexercises.business.services.impl" />
 	<context:component-scan
 		base-package="com.softserveinc.ita.jexercises.business.utils" />
-
-
-	<mongo:mongo host="localhost" port="27017" id="mongo" />
-	<mongo:db-factory dbname="myTest" mongo-ref="mongo" id="mongoDbFactory" />
-
-	<bean id="mongoTemplate" class="org.springframework.data.mongodb.core.MongoTemplate">
-		<constructor-arg name="mongoDbFactory" ref="mongoDbFactory" />
-	</bean>
-
-	<bean id="personDAO" class="com.softserveinc.ita.jexercises.persistence.dao.PersondaoImpl">
-		<constructor-arg name="mongoOps" ref="mongoTemplate"/>
-	</bean>
-
-
 </beans>

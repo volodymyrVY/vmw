@@ -1,41 +1,45 @@
-package com.softserveinc.ita.jexercises.persistence.dao;
+package com.softserveinc.ita.jexercises.persistence.dao.mongo;
 
 import com.mongodb.WriteResult;
 import com.softserveinc.ita.jexercises.common.entity.Person;
+import com.softserveinc.ita.jexercises.common.entity.Trailer;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoOperations;
 import org.springframework.data.mongodb.core.query.Criteria;
-import org.springframework.data.mongodb.repository.Query;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 
-public class PersondaoImpl implements PersonDao {
+@Repository("dao")
+public class TrailerDaoImpl {
 
+    @Autowired
     private MongoOperations mongoOps;
-    private static final String PERSON_COLLECTION = "Person";
 
-    public PersondaoImpl(MongoOperations mongoOps){
+    private static final String PERSON_COLLECTION = "Trailer";
+
+    public TrailerDaoImpl() {
+    }
+
+    public TrailerDaoImpl(MongoOperations mongoOps){
         this.mongoOps=mongoOps;
     }
 
-    @Override
-    public void create(Person p) {
+    public void create(Trailer p) {
         this.mongoOps.insert(p, PERSON_COLLECTION);
     }
 
-    @Override
-    public Person readById(String id) {
+    public Trailer readById(String id) {
         org.springframework.data.mongodb.core.query.Query query = new org.springframework.data.mongodb.core.query.Query(Criteria.where("_id").is(id));
-        return this.mongoOps.findOne(query, Person.class, PERSON_COLLECTION);
+        return this.mongoOps.findOne(query, Trailer.class, PERSON_COLLECTION);
     }
 
-    @Override
-    public void update(Person p) {
+    public void update(Trailer p) {
         this.mongoOps.save(p, PERSON_COLLECTION);
     }
 
-    @Override
     public int deleteById(String id) {
         org.springframework.data.mongodb.core.query.Query query = new org.springframework.data.mongodb.core.query.Query(Criteria.where("_id").is(id));
-        WriteResult result = this.mongoOps.remove(query, Person.class, PERSON_COLLECTION);
+        WriteResult result = this.mongoOps.remove(query, Trailer.class, PERSON_COLLECTION);
         return result.getN();
     }
-
 }

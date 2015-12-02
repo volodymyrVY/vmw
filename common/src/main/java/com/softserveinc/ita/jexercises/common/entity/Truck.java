@@ -1,32 +1,101 @@
 package com.softserveinc.ita.jexercises.common.entity;
 
-import javax.persistence.*;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.DBRef;
+import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.data.mongodb.core.mapping.Field;
 
-@Entity
-@Table(name = "TRACTOR")
-@Inheritance(strategy= InheritanceType.JOINED)
-public class Truck extends Item {
+import java.util.List;
 
-    @Column(name = "DISTANCE")
-    private Long distance;
 
-    @OneToOne
-    @JoinColumn(name = "TRAILER_ID")
-    private Trailer trailer;
+@Document(collection = "truck")
+public class Truck {
 
-    public Long getDistance() {
-        return distance;
+    @Id
+    private String id;
+
+    @Field
+    private String manufacturer;
+
+    @Field
+    private String model;
+
+    @Field
+    private String description;
+
+    @Field
+    private String price;
+
+    @Field
+    private String manufacturedDate;
+
+    @Field
+    private String color;
+
+    @DBRef
+    private List<Image> images;
+
+    public String getId() {
+        return id;
     }
 
-    public void setDistance(Long distance) {
-        this.distance = distance;
+    public void setId(String id) {
+        this.id = id;
     }
 
-    public Trailer getTrailer() {
-        return trailer;
+    public String getManufacturer() {
+        return manufacturer;
     }
 
-    public void setTrailer(Trailer trailer) {
-        this.trailer = trailer;
+    public void setManufacturer(String manufacturer) {
+        this.manufacturer = manufacturer;
+    }
+
+    public String getModel() {
+        return model;
+    }
+
+    public void setModel(String model) {
+        this.model = model;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public String getPrice() {
+        return price;
+    }
+
+    public void setPrice(String price) {
+        this.price = price;
+    }
+
+    public String getManufacturedDate() {
+        return manufacturedDate;
+    }
+
+    public void setManufacturedDate(String manufacturedDate) {
+        this.manufacturedDate = manufacturedDate;
+    }
+
+    public String getColor() {
+        return color;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
+    }
+
+    public List<Image> getImages() {
+        return images;
+    }
+
+    public void setImages(List<Image> images) {
+        this.images = images;
     }
 }
