@@ -1,12 +1,10 @@
 package com.softserveinc.ita.jexercises.persistence.dao.mongo;
 
 import com.mongodb.WriteResult;
-import com.softserveinc.ita.jexercises.common.entity.Person;
-import com.softserveinc.ita.jexercises.common.entity.Trailer;
+import com.softserveinc.ita.jexercises.common.entity.mongo.Trailer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoOperations;
 import org.springframework.data.mongodb.core.query.Criteria;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 
 @Repository("dao")

@@ -1,4 +1,5 @@
-package com.softserveinc.ita.jexercises.common.entity;
+package com.softserveinc.ita.jexercises.common.entity.mongo;
+
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.DBRef;
@@ -7,9 +8,8 @@ import org.springframework.data.mongodb.core.mapping.Field;
 
 import java.util.List;
 
-
-@Document(collection = "truck")
-public class Truck {
+@Document(collection = "trailer")
+public class Trailer {
 
     @Id
     private String id;
@@ -34,6 +34,9 @@ public class Truck {
 
     @DBRef
     private List<Image> images;
+
+    @Field
+    private String axis;
 
     public String getId() {
         return id;
@@ -97,5 +100,13 @@ public class Truck {
 
     public void setImages(List<Image> images) {
         this.images = images;
+    }
+
+    public String getAxis() {
+        return axis;
+    }
+
+    public void setAxis(String axis) {
+        this.axis = axis;
     }
 }

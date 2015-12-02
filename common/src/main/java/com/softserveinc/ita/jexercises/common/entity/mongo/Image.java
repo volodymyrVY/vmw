@@ -1,4 +1,4 @@
-package com.softserveinc.ita.jexercises.common.entity;
+package com.softserveinc.ita.jexercises.common.entity.mongo;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Field;

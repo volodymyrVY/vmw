@@ -1,7 +1,6 @@
 package com.softserveinc.ita.jexercises.business.services;
 
-import com.softserveinc.ita.jexercises.common.entity.Person;
-import com.softserveinc.ita.jexercises.common.entity.Trailer;
+import com.softserveinc.ita.jexercises.common.entity.mongo.Trailer;
 import com.softserveinc.ita.jexercises.persistence.dao.mongo.TrailerDaoImpl;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -22,11 +21,11 @@ trailer.setColor("red");
 
         //create
         personDAO.create(trailer);
-        System.out.println("Generated ID="+trailer.getId());
+        System.out.println("Generated ID=" + trailer.getId());
 
         //read
         Trailer p1 = personDAO.readById(trailer.getId());
-        System.out.println("Retrieved Person="+p1);
+        System.out.println("Retrieved Person=" + p1);
 
         //update
        /* p1.setName("Megan");p1.setAddress("SFO, Lviv");
