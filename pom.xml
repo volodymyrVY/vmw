@@ -12,7 +12,6 @@
 		<module>persistence</module>
 		<module>business</module>
 		<module>web</module>
-		<module>cms-webapp</module>
 	</modules>
 
 	<properties>
@@ -74,6 +73,11 @@
 			<artifactId>junit</artifactId>
 			<version>4.12</version>
 			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.data</groupId>
+			<artifactId>spring-data-mongodb</artifactId>
+			<version>1.5.2.RELEASE</version>
 		</dependency>
 	</dependencies>
 </project>
