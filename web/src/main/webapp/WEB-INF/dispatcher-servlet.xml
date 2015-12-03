@@ -14,8 +14,8 @@
 
 
        <mvc:resources mapping="/resources/**" location="/resources/" />
-
-<!--       <bean
+<!--
+       <bean
                class="org.springframework.web.servlet.view.InternalResourceViewResolver">
               <property name="prefix">
                      <value>/resources/**</value>

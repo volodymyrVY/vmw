@@ -5,7 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.OneToMany;
 import java.util.List;
 
-@Entity("ATTRIBUTE")
+@Entity(name="ATTRIBUTE")
 public class Attribute extends BaseEntity {
 
     @Column(name="NAME", nullable = false)

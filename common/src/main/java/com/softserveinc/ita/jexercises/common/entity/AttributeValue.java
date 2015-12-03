@@ -4,7 +4,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 
-@Entity("ATTRIBUTE_VALUE")
+@Entity(name="ATTRIBUTE_VALUE")
 public class AttributeValue extends BaseEntity {
 
     @Column(name="VALUE")
