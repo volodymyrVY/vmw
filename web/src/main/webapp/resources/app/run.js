@@ -18,15 +18,15 @@
 
 
 var app = angular.module('runModule', ['ui.bootstrap', 'ui.directives', 'ui.router'])
-    .config(function ($stateProvider, $urlRouterProvider) {
-        $urlRouterProvider.otherwise("/");
-        //
-        // Now set up the states
+    .config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
+        $locationProvider.html5Mode(true);
         $stateProvider
             .state('about', {
-                url: "/about",
+                url: "about",
                 templateUrl: "/resources/app/welcome/routeTest.html"
             });
+
+        $urlRouterProvider.otherwise("/");
 });
 
 

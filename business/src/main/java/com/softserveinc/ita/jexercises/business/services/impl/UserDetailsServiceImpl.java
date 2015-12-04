@@ -2,6 +2,7 @@ package com.softserveinc.ita.jexercises.business.services.impl;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.softserveinc.ita.jexercises.common.entity.utils.Role;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -36,7 +37,13 @@ public class UserDetailsServiceImpl implements UserDetailsService {
     @Override
     public UserDetails loadUserByUsername(String email)
             throws UsernameNotFoundException {
-        User user = userDao.findByEmail(email);
+        User user = new User ();
+        user.setEmail("sdgdsg@mail");
+        user.setPassword("123");
+        user.setRole(Role.ROLE_ADMIN);
+
+
+       // User user = userDao.findByEmail(email);
         if (user == null) {
             throw new UsernameNotFoundException(USER_NOT_FOUND_MESSAGE);
         }
