@@ -26,7 +26,7 @@ public class WelcomeController {
         }
 
     @RequestMapping(value = "/admin", method = RequestMethod.GET)
-    @PreAuthorize("hasRole('ROLE_ADMIN')")
+    @PreAuthorize("hasRole('ADMIN_ROLE')")
     public String adminForm() {
         return "/resources/app/admin/index.html";
     }

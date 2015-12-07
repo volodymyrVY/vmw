@@ -1,6 +1,8 @@
 package com.softserveinc.ita.jexercises.business.services.impl;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import com.softserveinc.ita.jexercises.common.entity.utils.Role;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -43,11 +45,23 @@ public class UserDetailsServiceImpl implements UserDetailsService {
         user.setRole(Role.ADMIN_ROLE);
 
 
-       // User user = userDao.findByEmail(email);
+
+
+        Set<GrantedAuthority> roles = new HashSet();
+        roles.add(new SimpleGrantedAuthority(Role.ADMIN_ROLE.name()));
+
+
+        return new org.springframework.security.core.userdetails.User(user.getEmail(),
+                        user.getPassword(),
+                        roles);
+
+
+
+       /* // User user = userDao.findByEmail(email);
         if (user == null) {
             throw new UsernameNotFoundException(USER_NOT_FOUND_MESSAGE);
         }
-        return buildSecuredUser(user);
+        return buildSecuredUser(user);*/
     }
 
     /**
