@@ -30,4 +30,9 @@ public class WelcomeController {
     public String adminForm() {
         return "/resources/app/admin/index.html";
     }
+
+    @RequestMapping(value = "/login", method = RequestMethod.GET)
+    public String login() {
+        return "/resources/app/login.html";
+    }
 }

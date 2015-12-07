@@ -38,9 +38,9 @@ public class UserDetailsServiceImpl implements UserDetailsService {
     public UserDetails loadUserByUsername(String email)
             throws UsernameNotFoundException {
         User user = new User ();
-        user.setEmail("sdgdsg@mail");
-        user.setPassword("123");
-        user.setRole(Role.ROLE_ADMIN);
+        user.setEmail("a");
+        user.setPassword("1");
+        user.setRole(Role.ADMIN_ROLE);
 
 
        // User user = userDao.findByEmail(email);

@@ -1,4 +1,5 @@
 /*
+/!*
  angular.module('runModule',['ui.bootstrap']).config(function($routeProvider){
  $routeProvider
  .when('/',{
@@ -13,8 +14,8 @@
  /!*controller: 'WelcomeController'*!/
  })
  .otherwise({ redirectTo: '/'});
- });*/
-/*angular.module('runModule',['ui.bootstrap']);*/
+ });*!/
+/!*angular.module('runModule',['ui.bootstrap']);*!/
 
 
 var app = angular.module('runModule', ['ui.bootstrap', 'ui.directives', 'ui.router'])
@@ -56,3 +57,4 @@ app.controller('DropdownCtrl', function ($scope, $log) {
             $scope.status.isopen = !$scope.status.isopen;
         };
     });
+*/
