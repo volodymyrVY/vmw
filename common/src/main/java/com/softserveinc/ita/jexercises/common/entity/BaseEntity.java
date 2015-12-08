@@ -8,7 +8,6 @@ import javax.persistence.EntityListeners;
 import javax.persistence.GeneratedValue;
 import javax.persistence.MappedSuperclass;
 import javax.persistence.Temporal;
-import javax.persistence.Version;
 import javax.persistence.TemporalType;
 import java.util.Date;
 

@@ -4,7 +4,6 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-import com.softserveinc.ita.jexercises.common.entity.utils.Role;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -42,13 +41,13 @@ public class UserDetailsServiceImpl implements UserDetailsService {
         User user = new User ();
         user.setEmail("a");
         user.setPassword("1");
-        user.setRole(Role.ADMIN_ROLE);
+        user.setRole(User.Role.ADMIN_ROLE);
 
 
 
 
         Set<GrantedAuthority> roles = new HashSet();
-        roles.add(new SimpleGrantedAuthority(Role.ADMIN_ROLE.name()));
+        roles.add(new SimpleGrantedAuthority(User.Role.ADMIN_ROLE.name()));
 
 
         return new org.springframework.security.core.userdetails.User(user.getEmail(),

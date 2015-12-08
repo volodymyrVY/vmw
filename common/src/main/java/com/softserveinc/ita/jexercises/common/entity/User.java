@@ -1,11 +1,6 @@
 package com.softserveinc.ita.jexercises.common.entity;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
-
-import com.softserveinc.ita.jexercises.common.entity.utils.Gender;
-import com.softserveinc.ita.jexercises.common.entity.utils.Role;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "USER")
@@ -23,13 +18,13 @@ public class User extends BaseEntity {
     @Column(name = "PASSWORD", nullable = false)
     private String password;
 
-    @Column(name = "ROLE", nullable = false)
+    @Enumerated(EnumType.STRING)
     private Role role;
 
     @Column (name = "PHONE")
     private Integer phone;
 
-    @Column(name="GENDER", nullable = false)
+    @Enumerated(EnumType.STRING)
     private Gender gender;
 
     public Role getRole() {
@@ -88,4 +83,27 @@ public class User extends BaseEntity {
         this.gender = gender;
     }
 
+    public enum Role {
+
+        ADMIN_ROLE,
+
+        USER_ROLE
+    }
+
+
+    public enum Gender {
+
+        MALE("Male"),
+        FEMALE("Female");
+
+        private String value;
+
+        Gender(String value) {
+            this.value = value;
+        }
+
+        public String getValue(){
+            return value;
+        }
+    }
 }

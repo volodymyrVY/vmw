@@ -15,7 +15,7 @@ import java.util.List;
  *
  * @param <T>  Entity class.
  * @param <PK> ID key type.
- * @author Taras Vuyiv
+ * @author Volodymyr Yakymiv
  */
 
 public class HibernateGenericDaoImpl<T, PK extends Serializable> implements
@@ -32,6 +32,7 @@ public class HibernateGenericDaoImpl<T, PK extends Serializable> implements
     /**
      * Constructor. Assigns class of entity.
      */
+    @SuppressWarnings("unchecked")
     public HibernateGenericDaoImpl() {
         ParameterizedType genericSuperclass = (ParameterizedType) getClass()
                 .getGenericSuperclass();
@@ -67,7 +68,8 @@ public class HibernateGenericDaoImpl<T, PK extends Serializable> implements
 
     @Override
     public List<T> findAll() {
-       /* JPAQuery jpaQuery = new JPAQuery(entityManager);
+/*
+        JPAQuery jpaQuery = new JPAQuery(entityManager);
         return jpaQuery.from(qObject).list(qObject);*/
         return null;
     }

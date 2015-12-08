@@ -5,8 +5,7 @@ import com.softserveinc.ita.jexercises.persistence.dao.GenericDao;
 
 /**
  * DAO of user.
- * 
- * @author Oksana Senchuk
+ *
  * @version 1.0
  */
 public interface UserDao extends GenericDao<User, Long> {

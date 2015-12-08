@@ -1,12 +1,16 @@
 package com.softserveinc.ita.jexercises.common.entity;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.OneToMany;
+import javax.persistence.Table;
 import java.util.List;
 
-@Entity(name = "ATTRIBUTE")
-public class Attribute extends BaseEntity {
+@Entity
+@Table(name = "ATTRIBUTE")
+public class Attribute extends AttributeType {
 
     @Column(name = "GROUP_NAME", nullable = false)
     private String groupName;
@@ -14,7 +18,8 @@ public class Attribute extends BaseEntity {
     @Column (name = "DISPLAY_VIEW", nullable = false)
     private String displayView;
 
-    @OneToMany
+    @OneToMany(fetch = FetchType.LAZY,cascade = CascadeType.ALL,
+            mappedBy = "attribute")
     private List<AttributeValue> attributes;
 
     public String getGroupName() {
