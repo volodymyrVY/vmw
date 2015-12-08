@@ -24,11 +24,11 @@ public abstract class BaseEntity {
     @Column(name = "ID")
     private Long id;
 
-    @Column(name = "CREATED_DATE")
+    @Column(name = "CREATE_TIMESTAMP")
     @Temporal(TemporalType.TIMESTAMP)
     private Date createdDate;
 
-    @Column(name = "MODIFIED_DATE")
+    @Column(name = "UPDATE_TIMESTAMP")
     @Temporal(TemporalType.TIMESTAMP)
     private Date modifiedDate;
 

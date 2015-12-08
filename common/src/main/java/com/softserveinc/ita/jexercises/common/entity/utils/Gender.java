@@ -2,6 +2,16 @@ package com.softserveinc.ita.jexercises.common.entity.utils;
 
 public enum Gender {
 
-    MALE,
-    FEMALE
+    MALE("Male"),
+    FEMALE("Female");
+
+    private String value;
+
+    Gender(String value) {
+       this.value = value;
+    }
+
+    public String getValue(){
+        return value;
+    }
 }

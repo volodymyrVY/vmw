@@ -1,9 +1,8 @@
 package com.softserveinc.ita.jexercises.common.entity;
 
-import java.util.Date;
-import java.util.List;
-
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
 
 import com.softserveinc.ita.jexercises.common.entity.utils.Gender;
 import com.softserveinc.ita.jexercises.common.entity.utils.Role;
@@ -27,14 +26,8 @@ public class User extends BaseEntity {
     @Column(name = "ROLE", nullable = false)
     private Role role;
 
-    @Column(name = "BIRTH_DATE", nullable = false)
-    private Date birthDate;
-
     @Column (name = "PHONE")
     private Integer phone;
-
-    @Column (name = "MOBILE_PHONE")
-    private Integer mobilePhone;
 
     @Column(name="GENDER", nullable = false)
     private Gender gender;
@@ -71,14 +64,6 @@ public class User extends BaseEntity {
         this.email = email;
     }
 
-    public Date getBirthDate() {
-        return birthDate;
-    }
-
-    public void setBirthDate(Date birthDate) {
-        this.birthDate = birthDate;
-    }
-
     public String getPassword() {
         return password;
     }
@@ -103,11 +88,4 @@ public class User extends BaseEntity {
         this.gender = gender;
     }
 
-    public Integer getMobilePhone() {
-        return mobilePhone;
-    }
-
-    public void setMobilePhone(Integer mobilePhone) {
-        this.mobilePhone = mobilePhone;
-    }
 }
