@@ -259,7 +259,7 @@ angular.module('ui.bootstrap.carousel', [])
     controllerAs: 'carousel',
     require: 'carousel',
     templateUrl: function(element, attrs) {
-      return attrs.templateUrl || 'template/carousel/carousel.html';
+      return attrs.templateUrl || 'template/carousel/welcome.html';
     },
     scope: {
       interval: '=',
@@ -446,7 +446,7 @@ angular.module('ui.bootstrap.carousel')
     controllerAs: 'carousel',
     require: 'carousel',
     templateUrl: function(element, attrs) {
-      return attrs.templateUrl || 'template/carousel/carousel.html';
+      return attrs.templateUrl || 'template/carousel/welcome.html';
     },
     scope: {
       interval: '=',

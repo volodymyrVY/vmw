@@ -12,7 +12,7 @@ describe('carousel', function() {
       });
     }
   }));
-  beforeEach(module('template/carousel/carousel.html', 'template/carousel/slide.html'));
+  beforeEach(module('template/carousel/welcome.html', 'template/carousel/slide.html'));
 
   var $rootScope, $compile, $controller, $interval, $templateCache;
   beforeEach(inject(function(_$rootScope_, _$compile_, _$controller_, _$interval_, _$templateCache_) {
@@ -68,7 +68,7 @@ describe('carousel', function() {
 
       elm = $compile(
         '<uib-carousel interval="interval" no-transition="true" no-pause="nopause">' +
-          '<uib-slide template-url="foo/bar.html"></uib-slide>' + 
+          '<uib-slide template-url="foo/bar.html"></uib-slide>' +
         '</uib-carousel>'
       )(scope);
       $rootScope.$digest();
@@ -497,7 +497,7 @@ describe('carousel', function() {
     });
 
     it('should be exposed in the template', inject(function($templateCache) {
-      $templateCache.put('template/carousel/carousel.html', '<div>{{carousel.text}}</div>');
+      $templateCache.put('template/carousel/welcome.html', '<div>{{carousel.text}}</div>');
 
       var scope = $rootScope.$new();
       var elm = $compile('<uib-carousel interval="bar" no-transition="false" no-pause="true"></uib-carousel>')(scope);
@@ -540,7 +540,7 @@ describe('carousel', function() {
 
 describe('carousel deprecation', function() {
   beforeEach(module('ui.bootstrap.carousel'));
-  beforeEach(module('template/carousel/carousel.html', 'template/carousel/slide.html'));
+  beforeEach(module('template/carousel/welcome.html', 'template/carousel/slide.html'));
 
   it('should suppress warning', function() {
     module(function($provide) {
@@ -576,12 +576,12 @@ describe('carousel deprecation', function() {
     expect($log.warn.calls.argsFor(0)).toEqual(['CarouselController is now deprecated. Use UibCarouselController instead.']);
     expect($log.warn.calls.argsFor(1)).toEqual(['carousel is now deprecated. Use uib-carousel instead.']);
   }));
-  
+
    it('should give warning by default for slider', inject(function($compile, $log, $rootScope) {
     spyOn($log, 'warn');
 
     var element = '<carousel interval="interval" no-transition="true" no-pause="nopause">' +
-        '<slide></slide>' + 
+        '<slide></slide>' +
       '</carousel>';
     element = $compile(element)($rootScope);
     $rootScope.$digest();

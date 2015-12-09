@@ -1,0 +1,10 @@
+<section ng-controller="WelcomePageController">
+    <div style="height: 305px">
+        <carousel interval="myInterval" style="height: 180%">
+            <slide ng-repeat="slide in slides" active="slide.active">
+                <img ng-src="{{slide.image}}">
+
+            </slide>
+        </carousel>
+    </div>
+</section>

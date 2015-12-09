@@ -22,7 +22,7 @@ public class WelcomeController {
      */
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public String welcomeForm() {
-            return "/resources/app/index.html";
+            return "/resources/app/welcome/index.html";
         }
 
     @RequestMapping(value = "/admin", method = RequestMethod.GET)

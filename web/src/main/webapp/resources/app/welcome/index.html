@@ -16,15 +16,19 @@
     <link href="/resources/app/dependency/bower-components/bootstrap/dist/css/bootstrap-theme.min.css" rel="stylesheet"
           type="text/css">
 
+    <link href="/resources/app/welcome/assets/css/welcome.css" rel="stylesheet"
+          type="text/css">
+
     <script src="/resources/app/dependency/bower-components/angular-ui/build/angular-ui.min.js"></script>
     <script src="/resources/app/dependency/bower-components/ui-bootstrap-0.13.1-SNAPSHOT/ui-bootstrap-tpls-0.13.1-SNAPSHOT.min.js"></script>
-    <script src="/resources/app/run.js"></script>
+    <script src="/resources/app/welcome/welcomeModule.js"></script>
+    <script src="/resources/app/welcome/controller/welcomeController.js"></script>
     <base href="/">
 </head>
 
-<body ng-app ="runModule">
-
-<nav class="navbar navbar-default" role="navigation">
+<body ng-app ="welcomeModule">
+<div class="container-fluid wrapper">
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation" >
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
         <button type="button" class="navbar-toggle" ng-init="navCollapsed = true" ng-click="navCollapsed = !navCollapsed">
@@ -81,27 +85,18 @@
                 </a>
                 <ul class="dropdown-menu" role="menu">
                     <li>
-                        <a href="#">Action</a>
+                        <a ui-sref="about">About</a>
                     </li>
-                    <li>
-                        <a href="#">Another action</a>
-                    </li>
-                    <li>
-                        <a href="#">Something else here</a>
-                    </li>
-                    <li>
-                        <a href="#">Separated link</a>
-                    </li>
+
                 </ul>
             </li>
         </ul>
     </div>
 </nav>
 
-<a ui-sref="about">Show List</a>
-<a ui-sref="welcome">Welcome</a>
+<!--<a ui-sref="about">Show List</a>
+<a ui-sref="welcome">Welcome</a>-->
 <div ui-view></div>
-
-
+</div>
 </body>
 </html>
