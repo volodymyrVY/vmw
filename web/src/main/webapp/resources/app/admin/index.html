@@ -1,10 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title></title>
-</head>
-<body>
-<h2>ADMIN PAGE</h2>
-</body>
-</html>
+<section id="carousel" ng-controller="WelcomePageController">
+    <div style="height: 305px">
+        <carousel interval="myInterval">
+
+            <slide ng-repeat="slide in slides" active="slide.active">
+                <img ng-src="{{slide.image}}">
+            </slide>
+        </carousel>
+    </div>
+</section>

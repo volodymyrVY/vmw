@@ -1,0 +1,74 @@
+/*.navbar-default {
+    -webkit-transition: min-height 1.0s ease;
+    -moz-transition: min-height 1.0s ease;
+    -ms-transition: min-height 1.0s ease;
+    -o-transition: min-height 1.0s ease;
+    transition: min-height 1.0s ease;
+}
+
+.navbar-fixed-top {height: 50px}
+
+.navbar .navbar-brand {
+    -webkit-transition: padding-top 1.0s ease, height 1.0s ease;
+    -moz-transition: padding-top 1.0s ease, height 1.0s ease;
+    -ms-transition: padding-top 1.0s ease, height 1.0s ease;
+    -o-transition: padding-top 1.0s ease, height 1.0s ease;
+    transition: padding-top 1.0s ease, height 1.0s ease;
+}
+.navbar .navbar-nav > li > a {
+    -webkit-transition: padding 1.0s ease;
+    -moz-transition: padding 1.0s ease;
+    -ms-transition: padding 1.0s ease;
+    -o-transition: padding 1.0s ease;
+    transition: padding 1.0s ease;
+}
+
+.navbar-default .shrink {
+    height: 20px;
+}
+.shrink .navbar-brand {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    height: 40px;
+}
+.shrink .navbar-nav > li > a {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.banner {height: 300px; background: #001720}*/
+
+.navbar-default {
+    -webkit-transition: min-height 1.5s ease;
+    -moz-transition: min-height 1.5s ease;
+    -ms-transition: min-height 1.5s ease;
+    -o-transition: min-height 1.5s ease;
+    transition: min-height 1.5s ease;
+
+}
+.navbar-default .navbar-brand {
+    -webkit-transition: padding-top 0.3s ease, height 0.3s ease;
+    -moz-transition: padding-top 0.3s ease, height 0.3s ease;
+    -ms-transition: padding-top 0.3s ease, height 0.3s ease;
+    -o-transition: padding-top 0.3s ease, height 0.3s ease;
+    transition: padding-top 0.3s ease, height 0.3s ease;
+}
+.navbar-default .navbar-nav > li > a {
+    -webkit-transition: padding 0.3s ease;
+    -moz-transition: padding 0.3s ease;
+    -ms-transition: padding 0.3s ease;
+    -o-transition: padding 0.3s ease;
+    transition: padding 0.3s ease;
+}
+.shrink {
+    min-height: 40px;
+}
+.shrink .navbar-brand {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    height: 40px;
+}
+.shrink .navbar-nav > li > a {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}

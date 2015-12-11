@@ -1,20 +1,22 @@
- var app = angular.module('welcomeModule', ['ui.bootstrap', 'ui.directives', 'ui.router'])
+
+(function() {
+    var app = angular.module('welcomeModule', ['ui.bootstrap', 'ui.directives',
+        'ui.router'])
         .config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
             $locationProvider.html5Mode(true);
             $urlRouterProvider.otherwise("/");
             $stateProvider
                 .state('about', {
                     url: "/about",
-                    templateUrl: "/resources/app/welcome/view/about.html"
+                    templateUrl: "/resources/app/welcome/view/test.html"
 
                 })
                 .state('welcome', {
                     url: "/",
-                    templateUrl: "/resources/app/welcome/view/welcome.html"
+                    templateUrl: "/resources/app/welcome/view/carousel.html"
                 });
-
-
         });
+
 
     app.controller('MainCtrl', function ($scope) {
         $scope.name = 'World';
@@ -42,5 +44,4 @@
             $scope.status.isopen = !$scope.status.isopen;
         };
     });
-
-
+})();
