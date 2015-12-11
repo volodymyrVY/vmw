@@ -13,7 +13,7 @@
                 })
                 .state('welcome', {
                     url: "/",
-                    templateUrl: "/resources/app/welcome/view/carousel.html"
+                    templateUrl: "/resources/app/welcome/view/welcome.html"
                 });
         });
 
