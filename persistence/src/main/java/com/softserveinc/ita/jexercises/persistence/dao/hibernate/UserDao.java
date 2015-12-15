@@ -1,4 +1,4 @@
-package com.softserveinc.ita.jexercises.persistence.dao.impl;
+package com.softserveinc.ita.jexercises.persistence.dao.hibernate;
 
 import com.softserveinc.ita.jexercises.common.entity.User;
 import com.softserveinc.ita.jexercises.persistence.dao.GenericDao;

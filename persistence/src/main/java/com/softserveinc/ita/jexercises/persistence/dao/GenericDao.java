@@ -9,7 +9,7 @@ import java.util.List;
  *
  * @param <T>  Entity class.
  * @param <PK> Type of entity key.
- * @author Taras Vuyiv
+ * @author Volodymyr Yakymiv
  */
 public interface GenericDao<T, PK extends Serializable> {
     /**

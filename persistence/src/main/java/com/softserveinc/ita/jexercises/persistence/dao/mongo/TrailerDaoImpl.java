@@ -7,37 +7,62 @@ import org.springframework.data.mongodb.core.MongoOperations;
 import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.stereotype.Repository;
 
-@Repository("dao")
-public class TrailerDaoImpl {
+@Repository
+public class TrailerDaoImpl extends BaseRepository{
 
-    @Autowired
-    private MongoOperations mongoOps;
+ /*   @Override
+    public long count() {
+        return this.getMongoOperations().count(new Query(),User.class);
+    }*/
 
-    private static final String PERSON_COLLECTION = "Trailer";
+   /* @Override
+    public void delete(Serializable serializable) {
 
-    public TrailerDaoImpl() {
+        this.getMongoOperations().remove(getIdQuery(serializable), User.class);
     }
 
-    public TrailerDaoImpl(MongoOperations mongoOps){
-        this.mongoOps=mongoOps;
+    @Override
+    public void deleteAll() {
+        this.getMongoOperations().remove(new Query(),User.class);
     }
 
-    public void create(Trailer p) {
-        this.mongoOps.insert(p, PERSON_COLLECTION);
+    @Override
+    public boolean exists(Serializable serializable) {
+        return this.getMongoOperations().exists(getIdQuery(serializable),User.class);
     }
 
-    public Trailer readById(String id) {
-        org.springframework.data.mongodb.core.query.Query query = new org.springframework.data.mongodb.core.query.Query(Criteria.where("_id").is(id));
-        return this.mongoOps.findOne(query, Trailer.class, PERSON_COLLECTION);
+    @Override
+    public List findAll() {
+        return this.getMongoOperations().find(new Query(),User.class);
     }
 
-    public void update(Trailer p) {
-        this.mongoOps.save(p, PERSON_COLLECTION);
+    @Override
+    public Iterable  findAll(Iterable  iterable) {
+        return null;
     }
 
-    public int deleteById(String id) {
-        org.springframework.data.mongodb.core.query.Query query = new org.springframework.data.mongodb.core.query.Query(Criteria.where("_id").is(id));
-        WriteResult result = this.mongoOps.remove(query, Trailer.class, PERSON_COLLECTION);
-        return result.getN();
+    @Override
+    public Page findAll(Pageable pageable) {
+        return null;
     }
+
+    @Override
+    public List findAll(Sort sort) {
+        return null;
+    }
+
+    @Override
+    public User findOne(Serializable serializable) {
+        return this.getMongoOperations().findOne(getIdQuery(serializable),User.class);
+    }
+
+    @Override
+    public User findUserByUserName(String uname) {
+
+        List<User> list = this.getMongoOperations().find(Query.query(Criteria.where("username").is(uname)),User.class);
+        if(list != null && list.size() > 0){
+            return list.get(0);
+        }
+        return null;
+    }*/
 }

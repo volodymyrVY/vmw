@@ -1,8 +1,8 @@
-package com.softserveinc.ita.jexercises.persistence.dao.impl.hibernate;
+package com.softserveinc.ita.jexercises.persistence.dao.hibernate.impl;
 
 import org.springframework.stereotype.Repository;
 import com.softserveinc.ita.jexercises.common.entity.User;
-import com.softserveinc.ita.jexercises.persistence.dao.impl.UserDao;
+import com.softserveinc.ita.jexercises.persistence.dao.hibernate.UserDao;
 
 /**
  * Represents Hibernate User DAO implementation.

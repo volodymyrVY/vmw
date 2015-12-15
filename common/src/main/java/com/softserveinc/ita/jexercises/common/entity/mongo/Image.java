@@ -1,31 +1,13 @@
 package com.softserveinc.ita.jexercises.common.entity.mongo;
 
-import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Field;
 
-import javax.persistence.Basic;
-import javax.persistence.Column;
-import javax.persistence.FetchType;
-import javax.persistence.Lob;
+public final class Image extends BaseDocument{
 
-public class Image {
-
-    @Id
-    private String id;
-
-    @Field
     private String path;
 
-    @Field
-    private String main;
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
+    @Field("main")
+    private boolean mainImage;
 
     public String getPath() {
         return path;
@@ -35,11 +17,11 @@ public class Image {
         this.path = path;
     }
 
-    public String getMain() {
-        return main;
+    public boolean isMainImage() {
+        return mainImage;
     }
 
-    public void setMain(String main) {
-        this.main = main;
+    public void setMainImage(boolean mainImage) {
+        this.mainImage = mainImage;
     }
 }

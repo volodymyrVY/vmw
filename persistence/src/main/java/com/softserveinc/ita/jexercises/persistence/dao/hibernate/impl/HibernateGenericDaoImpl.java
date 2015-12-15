@@ -1,11 +1,9 @@
-package com.softserveinc.ita.jexercises.persistence.dao.impl.hibernate;
+package com.softserveinc.ita.jexercises.persistence.dao.hibernate.impl;
 
 import com.softserveinc.ita.jexercises.persistence.dao.GenericDao;
 
-import javax.persistence.Entity;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import java.beans.Introspector;
 import java.io.Serializable;
 import java.lang.reflect.ParameterizedType;
 import java.util.List;
@@ -74,7 +72,7 @@ public class HibernateGenericDaoImpl<T, PK extends Serializable> implements
         return null;
     }
 
-    private String getEntityName() {
+ /*   private String getEntityName() {
         if (entity == null) {
             Entity entityAnn = (Entity) entityClass.getAnnotation(Entity.class);
 
@@ -94,5 +92,5 @@ public class HibernateGenericDaoImpl<T, PK extends Serializable> implements
 
     protected void setEntityManager(EntityManager entityManager) {
         this.entityManager = entityManager;
-    }
+    }*/
 }

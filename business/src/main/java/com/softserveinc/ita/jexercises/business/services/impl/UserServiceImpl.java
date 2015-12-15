@@ -8,7 +8,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.softserveinc.ita.jexercises.business.services.UserService;
 import com.softserveinc.ita.jexercises.common.entity.User;
-import com.softserveinc.ita.jexercises.persistence.dao.impl.UserDao;
+import com.softserveinc.ita.jexercises.persistence.dao.hibernate.UserDao;
 
 /**
  * Represents UserService interface implementation.

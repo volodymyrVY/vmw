@@ -13,7 +13,7 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 import com.softserveinc.ita.jexercises.common.entity.User;
-import com.softserveinc.ita.jexercises.persistence.dao.impl.UserDao;
+import com.softserveinc.ita.jexercises.persistence.dao.hibernate.UserDao;
 
 /**
  * Represents implementation of UserDetailsService used by the
