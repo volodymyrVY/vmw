@@ -1,18 +1,28 @@
 package com.softserveinc.ita.jexercises.common.entity.mongo;
 
-import org.hibernate.annotations.Cascade;
-import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 
 import java.util.List;
 
+@Document(collection = "Truck")
+public class Truck {
 
-@Document(collection = "truck")
-public class Truck extends BaseDocument{
+    private List<Image> images;
 
-private CommonAttribute commonAttribute;
+    @Field("common")
+    private CommonAttribute commonAttribute;
+
+    @Field("special")
+    private TruckSpecialAttribute truckSpecialAttribute;
+
+    public List<Image> getImages() {
+        return images;
+    }
+
+    public void setImages(List<Image> images) {
+        this.images = images;
+    }
 
     public CommonAttribute getCommonAttribute() {
         return commonAttribute;
@@ -20,5 +30,13 @@ private CommonAttribute commonAttribute;
 
     public void setCommonAttribute(CommonAttribute commonAttribute) {
         this.commonAttribute = commonAttribute;
+    }
+
+    public TruckSpecialAttribute getTruckSpecialAttribute() {
+        return truckSpecialAttribute;
+    }
+
+    public void setTruckSpecialAttribute(TruckSpecialAttribute truckSpecialAttribute) {
+        this.truckSpecialAttribute = truckSpecialAttribute;
     }
 }

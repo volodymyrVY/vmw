@@ -1,19 +1,28 @@
 package com.softserveinc.ita.jexercises.common.entity.mongo;
 
-
-import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 
 import java.util.List;
 
-@Document(collection = "trailer")
-public class Trailer extends BaseDocument {
+@Document(collection = "Trailer")
+public class Trailer {
 
+    private List<Image> images;
+
+    @Field("common")
     private CommonAttribute commonAttribute;
 
-    private String axis;
+    @Field("special")
+    private TrailerSpecialAttribute trailerSpecialAttribute;
+
+    public List<Image> getImages() {
+        return images;
+    }
+
+    public void setImages(List<Image> images) {
+        this.images = images;
+    }
 
     public CommonAttribute getCommonAttribute() {
         return commonAttribute;
@@ -23,11 +32,11 @@ public class Trailer extends BaseDocument {
         this.commonAttribute = commonAttribute;
     }
 
-    public String getAxis() {
-        return axis;
+    public TrailerSpecialAttribute getTrailerSpecialAttribute() {
+        return trailerSpecialAttribute;
     }
 
-    public void setAxis(String axis) {
-        this.axis = axis;
+    public void setTrailerSpecialAttribute(TrailerSpecialAttribute trailerSpecialAttribute) {
+        this.trailerSpecialAttribute = trailerSpecialAttribute;
     }
 }

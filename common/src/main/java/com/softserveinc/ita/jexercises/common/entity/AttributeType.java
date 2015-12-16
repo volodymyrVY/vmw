@@ -19,7 +19,7 @@ public class AttributeType extends BaseEntity {
     }
 
     public enum Type {
-        TIR("Tir"),
+        TIR("Truck"),
         TRAILER("Trailer"),
         COMMON("Common");
 

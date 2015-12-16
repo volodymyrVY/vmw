@@ -1,14 +1,10 @@
-package com.softserveinc.ita.jexercises.persistence.dao.mongo;
+package com.softserveinc.ita.jexercises.persistence.dao.mongo.impl;
 
-import com.mongodb.WriteResult;
-import com.softserveinc.ita.jexercises.common.entity.mongo.Trailer;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.mongodb.core.MongoOperations;
-import org.springframework.data.mongodb.core.query.Criteria;
+import com.softserveinc.ita.jexercises.persistence.dao.mongo.GenericMongoDao;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public class TrailerDaoImpl extends BaseRepository{
+public class TrailerDaoImpl extends GenericMongoDao {
 
  /*   @Override
     public long count() {

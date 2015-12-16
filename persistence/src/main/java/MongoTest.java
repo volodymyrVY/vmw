@@ -1,6 +1,6 @@
 import com.softserveinc.ita.jexercises.common.entity.mongo.CommonAttribute;
 import com.softserveinc.ita.jexercises.common.entity.mongo.Trailer;
-import com.softserveinc.ita.jexercises.persistence.dao.mongo.TrailerDaoImpl;
+import com.softserveinc.ita.jexercises.persistence.dao.mongo.impl.TrailerDaoImpl;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 

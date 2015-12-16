@@ -2,7 +2,7 @@ package com.softserveinc.ita.jexercises.common.entity.mongo;
 
 import org.springframework.data.mongodb.core.mapping.Field;
 
-public final class Image extends BaseDocument{
+public final class Image {
 
     private String path;
 

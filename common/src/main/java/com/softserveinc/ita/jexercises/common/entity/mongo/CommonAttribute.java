@@ -1,7 +1,7 @@
 package com.softserveinc.ita.jexercises.common.entity.mongo;
 
 
-public class CommonAttribute extends BaseDocument {
+public class CommonAttribute {
 
     private String manufacturer;
 

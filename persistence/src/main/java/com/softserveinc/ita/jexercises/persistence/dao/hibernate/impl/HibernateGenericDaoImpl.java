@@ -44,8 +44,13 @@ public class HibernateGenericDaoImpl<T, PK extends Serializable> implements
     }
 
     @Override
-    public T findById(PK id) {
-        return this.entityManager.find(entityClass, id);
+    public T update(T object) {
+        return this.entityManager.merge(object);
+    }
+
+    @Override
+    public void delete(T object) {
+        this.entityManager.remove(object);
     }
 
     @Override
@@ -55,13 +60,8 @@ public class HibernateGenericDaoImpl<T, PK extends Serializable> implements
     }
 
     @Override
-    public T update(T object) {
-        return this.entityManager.merge(object);
-    }
-
-    @Override
-    public void delete(T object) {
-        this.entityManager.remove(object);
+    public T findById(PK id) {
+        return this.entityManager.find(entityClass, id);
     }
 
     @Override
